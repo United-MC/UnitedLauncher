@@ -1,0 +1,96 @@
+#lower {
+    backdrop-filter: blur(50px);
+    background-color: var(--linksbg);
+    bottom: 0;
+    position: fixed;
+    width: 100svw;
+    border-top: solid 2px rgba(129, 129, 129, 0.2);
+}
+#lower .content {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    align-items: center;
+}
+.bottomNavContainer {
+    
+}
+
+#serverStatus {
+    text-align: left;
+    margin-right: auto;
+}
+
+#playButton {
+    text-align: center;
+    margin: 0 auto;
+}
+#playButton #launch_button {
+    background-color: var(--accent1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transform: translateY(0px);
+    transition: transform 0.2s;
+    color: var(--font-color);
+    position: fixed;
+    top: -20px;
+    left: calc(50vw - 95px);
+    font-size: 1.3rem;
+    width: 170px;
+}
+#playButton #launch_button:hover {
+    background-color: var(--accent2);
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+#playButton #server_selection_button {
+    color: var(--font-color-light-inactive);
+    transition: all 0.2s;
+}
+#playButton #server_selection_button:hover {
+    color: white;
+    cursor: pointer;
+}
+#playButton #launch_details {
+    display: none;
+}
+#launch_details_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#launch_progress[value] {
+    height: 3px;
+    width: 265px;
+    appearance: none;
+}
+#launch_progress[value]::-webkit-progress-bar {
+    background-color: transparent;
+}
+#launch_progress[value]::-webkit-progress-value {
+    background-color: #fff;
+}
+
+#linksArea{
+    display: flex;
+    text-align: right;
+    margin-left: auto;
+    gap: 10px;
+}
+#linksArea a{
+    background-color: var(--accent1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transform: translateY(0px);
+    transition: all 0.2s;
+    color: var(--font-color);
+}
+#linksArea a:hover {
+    background-color: var(--accent2);
+    transform: translateY(-5px);
+    cursor: pointer;
+}
