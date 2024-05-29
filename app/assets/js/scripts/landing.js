@@ -659,7 +659,7 @@ let newsGlideCount = 0
  * 
  * @param {boolean} up True to slide up, otherwise false. 
  */
-function slide_(up){
+/* function slide_(up){
     const lCUpper = document.querySelector('#landingContainer > #upper')
     const lCLLeft = document.querySelector('#landingContainer > #lower > #left')
     const lCLCenter = document.querySelector('#landingContainer > #lower > #center')
@@ -701,10 +701,10 @@ function slide_(up){
         lCLRight.style.top = '0px'
         newsBtn.style.top = '10px'
     }
-}
+} */
 
 // Bind news button.
-document.getElementById('newsButton').onclick = () => {
+/* document.getElementById('newsButton').onclick = () => {
     // Toggle tabbing.
     if(newsActive){
         $('#landingContainer *').removeAttr('tabindex')
@@ -721,7 +721,7 @@ document.getElementById('newsButton').onclick = () => {
     }
     slide_(!newsActive)
     newsActive = !newsActive
-}
+} */
 
 // Array to store article meta.
 let newsArr = null
@@ -734,7 +734,7 @@ let newsLoadingListener = null
  * 
  * @param {boolean} val True to set loading animation, otherwise false.
  */
-function setNewsLoading(val){
+/* function setNewsLoading(val){
     if(val){
         const nLStr = Lang.queryJS('landing.news.checking')
         let dotStr = '..'
@@ -753,10 +753,10 @@ function setNewsLoading(val){
             newsLoadingListener = null
         }
     }
-}
+} */
 
 // Bind retry button.
-newsErrorRetry.onclick = () => {
+/* newsErrorRetry.onclick = () => {
     $('#newsErrorFailed').fadeOut(250, () => {
         initNews()
         $('#newsErrorLoading').fadeIn(250)
@@ -769,7 +769,7 @@ newsArticleContentScrollable.onscroll = (e) => {
     } else {
         newsContent.removeAttribute('scrolled')
     }
-}
+} */
 
 /**
  * Reload the news without restarting.
@@ -777,7 +777,7 @@ newsArticleContentScrollable.onscroll = (e) => {
  * @returns {Promise.<void>} A promise which resolves when the news
  * content has finished loading and transitioning.
  */
-function reloadNews(){
+/* function reloadNews(){
     return new Promise((resolve, reject) => {
         $('#newsContent').fadeOut(250, () => {
             $('#newsErrorLoading').fadeIn(250)
@@ -786,14 +786,14 @@ function reloadNews(){
             })
         })
     })
-}
+} */
 
 let newsAlertShown = false
 
 /**
  * Show the news alert indicating there is new news.
  */
-function showNewsAlert(){
+/* function showNewsAlert(){
     newsAlertShown = true
     $(newsButtonAlert).fadeIn(250)
 }
@@ -806,7 +806,7 @@ async function digestMessage(str) {
         .map((b) => b.toString(16).padStart(2, '0'))
         .join('')
     return hashHex
-}
+} */
 
 /**
  * Initialize News UI. This will load the news and prepare
@@ -815,7 +815,7 @@ async function digestMessage(str) {
  * @returns {Promise.<void>} A promise which resolves when the news
  * content has finished loading and transitioning.
  */
-async function initNews(){
+/* async function initNews(){
 
     setNewsLoading(true)
 
@@ -902,14 +902,14 @@ async function initNews(){
     }
 
 
-}
+} */
 
 /**
  * Add keyboard controls to the news UI. Left and right arrows toggle
  * between articles. If you are on the landing page, the up arrow will
  * open the news UI.
  */
-document.addEventListener('keydown', (e) => {
+/* document.addEventListener('keydown', (e) => {
     if(newsActive){
         if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
             document.getElementById(e.key === 'ArrowRight' ? 'newsNavigateRight' : 'newsNavigateLeft').click()
@@ -926,7 +926,7 @@ document.addEventListener('keydown', (e) => {
             }
         }
     }
-})
+}) */
 
 /**
  * Display a news article on the UI.
@@ -934,7 +934,7 @@ document.addEventListener('keydown', (e) => {
  * @param {Object} articleObject The article meta object.
  * @param {number} index The article index.
  */
-function displayArticle(articleObject, index){
+/* function displayArticle(articleObject, index){
     newsArticleTitle.innerHTML = articleObject.title
     newsArticleTitle.href = articleObject.link
     newsArticleAuthor.innerHTML = 'by ' + articleObject.author
@@ -950,13 +950,13 @@ function displayArticle(articleObject, index){
     })
     newsNavigationStatus.innerHTML = Lang.query('ejs.landing.newsNavigationStatus', {currentPage: index, totalPages: newsArr.length})
     newsContent.setAttribute('article', index-1)
-}
+} */
 
 /**
  * Load news information from the RSS feed specified in the
  * distribution index.
  */
-async function loadNews(){
+/* async function loadNews(){
 
     const distroData = await DistroAPI.getDistribution()
     if(!distroData.rawDistribution.rss) {
@@ -1023,4 +1023,59 @@ async function loadNews(){
     })
 
     return await promise
-}
+} */
+
+/* 
+News
+ */
+let Parser = require('rss-parser')
+let parser = new Parser()
+const RSS_URL = 'https://blog.writefreely.org/feed/'
+const newsContainter = document.getElementById('newsContainer');
+
+(async () => {
+
+    let feed = await parser.parseURL(RSS_URL)
+    console.log(feed.title)
+    let html = ''
+
+    feed.items.forEach(item => {
+        html += `
+        <article>
+            <h2>${item.title}</h2>
+            <hr>
+            ${item['content:encoded']}
+        </article>
+        `
+        
+        console.log(item.title + ':' + item.link)
+    })
+    newsContainter.insertAdjacentHTML('beforeend', html)
+  
+})()
+
+/* const newsContainter = document.getElementById('newsContainer')
+fetch(RSS_URL)
+    .then(response => response.text())
+    .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
+    .then(data => {
+        console.log(data)
+        const items = data.querySelectorAll('item')
+        let html = ''
+        items.forEach(el => {
+            html += `
+            <article>
+            <img src="${el.querySelector('link').innerHTML}/image/large.png" alt="">
+            <h2>
+                <a href="${el.querySelector('link').innerHTML}" target="_blank" rel="noopener">
+                ${el.querySelector('title').innerHTML}
+                </a>
+            </h2>
+            <p>
+            ${el.querySelector('pubDate').innerHTML}
+            </p>
+            </article>
+            `
+        })
+        newsContainter.insertAdjacentHTML('beforeend', html)
+    }) */

@@ -1,4 +1,5 @@
 @import url(./navbar.css);
+@import url(./news.css);
 
 * {
   --accent1: #cd1110;
@@ -2545,7 +2546,7 @@ input:checked + .toggleSwitchSlider:before {
  ******************************************************************************/
 
 /* Main container. */
-#newsContainer {
+/* #newsContainer {
     position: absolute;
     top: 100%;
     height: 100%;
@@ -2554,19 +2555,19 @@ input:checked + .toggleSwitchSlider:before {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-}
+} */
 
 /* News content container. */
-#newsContent {
+/* #newsContent {
     height: 82vh;
     width: 100%;
     display: flex;
     -webkit-user-select: initial;
     position: relative;
-}
+} */
 
 /* Drop shadow displayed when content is scrolled out of view. */
-#newsContent:before {
+/* #newsContent:before {
     content: '';
     background: linear-gradient(rgba(0, 0, 0, 0.25), transparent);
     width: 100%;
@@ -2577,10 +2578,10 @@ input:checked + .toggleSwitchSlider:before {
 }
 #newsContent[scrolled]:before {
     opacity: 1;
-}
+} */
 
 /* News article status container (left). */
-#newsStatusContainer {
+/* #newsStatusContainer {
     width: calc(30% - 60px);
     height: calc(100% - 30px);
     padding: 15px 15px 15px 45px;
@@ -2588,23 +2589,23 @@ input:checked + .toggleSwitchSlider:before {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-}
+} */
 
 /* News status content. */
-#newsStatusContent {
+/* #newsStatusContent {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
+} */
 
 /* News title wrapper. */
-#newsTitleContainer {
+/* #newsTitleContainer {
     display: flex;
     max-width: 90%;
-}
+} */
 
 /* News article title styles. */
-#newsArticleTitle {
+/* #newsArticleTitle {
     font-size: 18px;
     font-weight: bold;
     font-family: 'Avenir Medium';
@@ -2621,45 +2622,45 @@ input:checked + .toggleSwitchSlider:before {
 #newsArticleTitle:active {
     color: #c7c7c7;
     text-shadow: 0px 0px 20px #c7c7c7;
-}
+} */
 
 /* News meta container. */
-#newsMetaContainer {
+/* #newsMetaContainer {
     display: flex;
     flex-direction: column;
-}
+} */
 
 /* Date and author wrappers. */
-#newsArticleDateWrapper,
+/* #newsArticleDateWrapper,
 #newsArticleAuthorWrapper {
     display: flex;
     justify-content: flex-end;
-}
+} */
 
 /* Date and author shared styles. */
-#newsArticleDate,
+/* #newsArticleDate,
 #newsArticleAuthor {
     display: inline-block;
     font-size: 10px;
     padding: 0px 5px;
     font-weight: bold;
     border-radius: 2px;
-}
+} */
 
 /* Date styles. */
-#newsArticleDate {
+/* #newsArticleDate {
     background: white;
     color: black;
     margin-top: 5px;
-}
+} */
 
 /* Author styles. */
-#newsArticleAuthor {
+/* #newsArticleAuthor {
     background: #a02d2a;
-}
+} */
 
 /* News article comments styles. */
-#newsArticleComments {
+/* #newsArticleComments {
     margin-top: 5px;
     display: inline-block;
     font-size: 10px;
@@ -2675,17 +2676,17 @@ input:checked + .toggleSwitchSlider:before {
 }
 #newsArticleComments:active {
     color: #c7c7c7;
-}
+} */
 
 /* Article content container (right). */
-#newsArticleContainer {
+/* #newsArticleContainer {
     width: calc(100% - 25px);
     height: 100%;
     margin: 0px 0px 0px 25px;
-}
+} */
 
 /* Article content styles. */
-#newsArticleContentScrollable {
+/* #newsArticleContentScrollable {
     font-size: 12px;
     overflow-y: scroll;
     height: 100%;
@@ -2751,15 +2752,14 @@ input:checked + .toggleSwitchSlider:before {
 
 .newsArticleSpacerTop {
     height: 15px;
-}
-
+}*/
 /* Div to add spacing at the end of a news article. */
-.newsArticleSpacerBot {
+/* .newsArticleSpacerBot {
     height: 30px;
-}
+} */
 
 /* News navigation container. */
-#newsNavigationContainer {
+/* #newsNavigationContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2768,16 +2768,16 @@ input:checked + .toggleSwitchSlider:before {
     position: absolute;
     bottom: 15px;
     right: 0px;
-}
+} */
 
 /* Navigation status span. */
-#newsNavigationStatus {
+/* #newsNavigationStatus {
     font-size: 12px;
     margin: 0px 15px;
-}
+} */
 
 /* Left and right navigation button styles. */
-#newsNavigateLeft,
+/* #newsNavigateLeft,
 #newsNavigateRight {
     background: none;
     border: none;
@@ -2810,10 +2810,10 @@ input:checked + .toggleSwitchSlider:before {
 #newsNavigationRightSVG {
     transform: rotate(90deg);
     width: 15px;
-}
+} */
 
 /* News error (message) container. */
-#newsErrorContainer {
+/* #newsErrorContainer {
     height: 100%;
     display: flex;
     align-items: center;
@@ -2825,10 +2825,10 @@ input:checked + .toggleSwitchSlider:before {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-}
+} */
 
 /* News error content (message). */
-.newsErrorContent {
+/* .newsErrorContent {
     font-size: 20px;
 }
 #newsErrorLoading {
@@ -2837,9 +2837,9 @@ input:checked + .toggleSwitchSlider:before {
 }
 #nELoadSpan {
     white-space: pre;
-}
+} */
 /* News error retry button styles. */
-#newsErrorRetry {
+/* #newsErrorRetry {
     font-size: 12px;
     font-weight: bold;
     cursor: pointer;
@@ -2855,7 +2855,7 @@ input:checked + .toggleSwitchSlider:before {
 #newsErrorRetry:active {
     color: #c7c7c7;
     text-shadow: 0px 0px 20px #c7c7c7;
-}
+} */
 
 /*******************************************************************************
  *                                                                             *

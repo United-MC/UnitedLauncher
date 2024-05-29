@@ -12,9 +12,6 @@
     grid-template-columns: 200px 1fr 200px;
     align-items: center;
 }
-.bottomNavContainer {
-    
-}
 
 #serverStatus {
     text-align: left;

@@ -1,0 +1,19 @@
+.news {
+    height: calc(100vh - 150px);
+    padding-top: 150px;
+    overflow-y: scroll;
+}
+#newsContainer {
+    height: fit-content;
+    margin: 0 auto;
+    margin-bottom: 150px;
+    display: flex;flex-direction: column;
+    gap: 10px;
+    width: 60vw;
+    max-width: 800px;
+}
+#newsContainer article {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--dark-bg);
+}
