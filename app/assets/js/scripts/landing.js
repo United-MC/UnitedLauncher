@@ -38,7 +38,7 @@ const launch_progress         = document.getElementById('launch_progress')
 const launch_progress_label   = document.getElementById('launch_progress_label')
 const launch_details_text     = document.getElementById('launch_details_text')
 const server_selection_button = document.getElementById('server_selection_button')
-const user_text               = document.getElementById('user_text')
+const user_text               = document.getElementById('username')
 
 const loggerLanding = LoggerUtil.getLogger('Landing')
 
@@ -128,13 +128,13 @@ document.getElementById('launch_button').addEventListener('click', async e => {
 })
 
 // Bind settings button
-document.getElementById('settingsMediaButton').onclick = async e => {
+/* document.getElementById('settingsMediaButton').onclick = async e => {
     await prepareSettings()
     switchView(getCurrentView(), VIEWS.settings)
-}
+} */
 
 // Bind avatar overlay button.
-document.getElementById('avatarOverlay').onclick = async e => {
+document.getElementById('avatarContainer').onclick = async e => {
     await prepareSettings()
     switchView(getCurrentView(), VIEWS.settings, 500, 500, () => {
         settingsNavItemListener(document.getElementById('settingsNavAccount'), false)
@@ -149,7 +149,7 @@ function updateSelectedAccount(authUser){
             username = authUser.displayName
         }
         if(authUser.uuid != null){
-            document.getElementById('avatarContainer').style.backgroundImage = `url('https://mc-heads.net/body/${authUser.uuid}/right')`
+            document.getElementById('avatarContainer').style.backgroundImage = `url('https://mc-heads.net/avatar/${authUser.uuid}')`
         }
     }
     user_text.innerHTML = username
@@ -815,7 +815,7 @@ async function digestMessage(str) {
  * @returns {Promise.<void>} A promise which resolves when the news
  * content has finished loading and transitioning.
  */
-/* async function initNews(){
+async function initNews(){
 
     setNewsLoading(true)
 
@@ -902,7 +902,7 @@ async function digestMessage(str) {
     }
 
 
-} */
+}
 
 /**
  * Add keyboard controls to the news UI. Left and right arrows toggle
@@ -1028,7 +1028,7 @@ async function digestMessage(str) {
 /* 
 News
  */
-let Parser = require('rss-parser')
+/* let Parser = require('rss-parser')
 let parser = new Parser()
 const RSS_URL = 'https://blog.writefreely.org/feed/'
 const newsContainter = document.getElementById('newsContainer');
@@ -1052,7 +1052,7 @@ const newsContainter = document.getElementById('newsContainer');
     })
     newsContainter.insertAdjacentHTML('beforeend', html)
   
-})()
+})() */
 
 /* const newsContainter = document.getElementById('newsContainer')
 fetch(RSS_URL)

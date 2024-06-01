@@ -1,19 +1,24 @@
-.news {
-    height: calc(100vh - 150px);
-    padding-top: 150px;
-    overflow-y: scroll;
-}
 #newsContainer {
-    height: fit-content;
+    width: 80svw;
+    max-width: 1200px;
     margin: 0 auto;
-    margin-bottom: 150px;
-    display: flex;flex-direction: column;
-    gap: 10px;
-    width: 60vw;
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding-block: 120px;
 }
-#newsContainer article {
+#newsContainer .news {
+    background-color: var(--dark-bg);
     padding: 10px;
     border-radius: 10px;
-    background-color: var(--dark-bg);
+    font-size: 0.8em;
+}
+
+#newsContainer .news h3 {
+    font-size: 0.8rem;
+    color: gray;
+    margin-bottom: 3px;
+}
+#newsContainer .news p {
+    margin-block: 3px;
 }

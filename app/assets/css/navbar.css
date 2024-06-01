@@ -1,9 +1,10 @@
 #lower {
-    backdrop-filter: blur(50px);
-    background-color: var(--linksbg);
     bottom: 0;
     position: fixed;
-    width: 100svw;
+    width: 100lvw;
+    z-index: 99999;
+    backdrop-filter: blur(50px);
+    background-color: var(--linksbg);
     border-top: solid 2px rgba(129, 129, 129, 0.2);
 }
 #lower .content {
@@ -43,11 +44,13 @@
     cursor: pointer;
 }
 #playButton #server_selection_button {
-    color: var(--font-color-light-inactive);
-    transition: all 0.2s;
+    color: var(--font-color);
+    opacity: 0.4;
+    transition: opacity 0.2s;
+    font-size: 0.8rem;
 }
 #playButton #server_selection_button:hover {
-    color: white;
+    opacity: 1;
     cursor: pointer;
 }
 #playButton #launch_details {

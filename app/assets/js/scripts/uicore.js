@@ -133,7 +133,7 @@ $(function(){
     loggerUICore.info('UICore Initialized');
 })*/
 
-document.addEventListener('readystatechange', function () {
+/* document.addEventListener('readystatechange', function () {
     if (document.readyState === 'interactive'){
         loggerUICore.info('UICore Initializing..')
 
@@ -191,7 +191,7 @@ document.addEventListener('readystatechange', function () {
         
     }
 
-}, false)
+}, false) */
 
 /**
  * Open web links in the user's default browser.
