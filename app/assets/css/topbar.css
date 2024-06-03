@@ -1,10 +1,15 @@
 #topBar {
     display: flex;
     padding: 20px;
+    height: 300px;
+    background-image: url(../images/backgrounds/0.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 #topBar .logo {
     width: 100px;
+    height: 100px;
 }
 #topBar .userContainer {
     margin-left: auto;
@@ -44,6 +49,7 @@
     align-items: center;
     justify-content: center;
     visibility: hidden;
+    z-index: 2;
 }
 #updateAvailableContainer .content {
     width: 350px;
@@ -57,12 +63,15 @@
 }
 @keyframes updateGlow {
     0% {
-        box-shadow: 0 0 5px 1px var(--accent2);
+        border: solid 3px var(--accent2);
+        /* box-shadow: inset 0 0 5px 1px var(--accent2); */
     }
     50% {
-        box-shadow: 0 0 5px 1px var(--accent-alt1);
+        border: solid 3px var(--accent1);
+        /* box-shadow: inset 0 0 5px 1px var(--accent-alt1); */
     }
     100% {
-        box-shadow: 0 0 5px 1px var(--accent2);
+        border: solid 3px var(--accent2);
+        /* box-shadow: inset 0 0 5px 1px var(--accent2); */
     }
 }

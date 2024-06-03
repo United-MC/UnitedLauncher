@@ -5,7 +5,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-    padding-block: 120px;
+    padding-bottom: 70px;
+    position: relative;
+    top: -50px;
+    z-index: 1;
 }
 #newsContainer .news {
     background-color: var(--dark-bg);
