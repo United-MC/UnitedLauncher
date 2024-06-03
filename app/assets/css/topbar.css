@@ -4,7 +4,7 @@
 }
 
 #topBar .logo {
-    width: 75px;
+    width: 100px;
 }
 #topBar .userContainer {
     margin-left: auto;
@@ -43,6 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    visibility: hidden;
 }
 #updateAvailableContainer .content {
     width: 350px;
@@ -56,12 +57,12 @@
 }
 @keyframes updateGlow {
     0% {
-        box-shadow: 0 0 5px 1px var(--accent1);
-    }
-    50% {
         box-shadow: 0 0 5px 1px var(--accent2);
     }
+    50% {
+        box-shadow: 0 0 5px 1px var(--accent-alt1);
+    }
     100% {
-        box-shadow: 0 0 5px 1px var(--accent1);
+        box-shadow: 0 0 5px 1px var(--accent2);
     }
 }
